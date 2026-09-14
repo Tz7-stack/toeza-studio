@@ -1,1 +1,41 @@
+// ========================================
+// TOEZA STUDIO
+// Website Builder — V1
+// ========================================
 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("TOEZA STUDIO loaded 🚀");
+
+  // Start Building button
+  const startBuildingBtn = document.getElementById("startBuilding");
+
+  if (startBuildingBtn) {
+    startBuildingBtn.addEventListener("click", () => {
+      const builderSection = document.getElementById("builder");
+
+      if (builderSection) {
+        builderSection.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  }
+
+  // Website type selection
+  const websiteTypes = document.querySelectorAll(".website-type");
+
+  websiteTypes.forEach((type) => {
+    type.addEventListener("click", () => {
+      websiteTypes.forEach((item) => {
+        item.classList.remove("selected");
+      });
+
+      type.classList.add("selected");
+
+      console.log(
+        "Selected website type:",
+        type.dataset.type
+      );
+    });
+  });
+});
